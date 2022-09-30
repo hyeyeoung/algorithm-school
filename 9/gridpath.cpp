@@ -3,10 +3,9 @@
 #include <cstdio>
 #include <iostream>
 #include <vector>
-#include <fstream>
 #include <algorithm>
 using namespace std;
-void check_path(int row, int col, vector<vector<int>> &grid) { //-1À» Ã¤¿ì±â 
+void check_path(int row, int col, vector<vector<int>> &grid) { //-1ï¿½ï¿½ Ã¤ï¿½ï¿½ï¿½ 
 	for (int i = 0; i < row; i++) {
 		if (grid[i][0] == -1) {
 			for (int j = i; j < row; j++)
@@ -27,12 +26,12 @@ void check_path(int row, int col, vector<vector<int>> &grid) { //-1À» Ã¤¿ì±â
 		}
 	}
 }
-void find_min(int row, int col, vector<vector<int>>& grid,vector<vector<int>>& path) { //ÃÖ¼Ò°ªÃ£±â ÇÔ¼ö
-	path[0][0] = grid[0][0]; //Á¦ÀÏ Ã¹ Ç×Àº ¿ø·¡ °ªÀÇ 0,0
-	for (int i = 1; i < row; i++) { //j=0ÀÏ ¶§,
+void find_min(int row, int col, vector<vector<int>>& grid,vector<vector<int>>& path) { //ï¿½Ö¼Ò°ï¿½Ã£ï¿½ï¿½ ï¿½Ô¼ï¿½
+	path[0][0] = grid[0][0]; //ï¿½ï¿½ï¿½ï¿½ Ã¹ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 0,0
+	for (int i = 1; i < row; i++) { //j=0ï¿½ï¿½ ï¿½ï¿½,
 		if (grid[i][0] != -1)  path[i][0] = grid[i][0] + path[i - 1][0];
 	}
-	for (int i = 1; i < col; i++) { //i =0ÀÏ¶§
+	for (int i = 1; i < col; i++) { //i =0ï¿½Ï¶ï¿½
 		if (grid[0][i] != -1)  path[0][i] = grid[0][i] + path[0][i-1];
 	}
 	for (int i = 1; i < row; i++) {
@@ -52,7 +51,7 @@ void find_path(int row, int col, vector<vector<int>>& path, vector<vector<int>>&
 	for (int i = row - 1; i >= 0; i--) {
 		for (int j = col-1; j >= 0; j--) {
 			if (result[i][j] == 1) {
-				if (i != 0 && j != 0) {//Ã¹¹øÂ° °æ¿ì i¿Í j°¡ ¸ðµÎ 0ÀÌ ¾Æ´Ñ °æ¿ì
+				if (i != 0 && j != 0) {//Ã¹ï¿½ï¿½Â° ï¿½ï¿½ï¿½ iï¿½ï¿½ jï¿½ï¿½ ï¿½ï¿½ï¿½ 0ï¿½ï¿½ ï¿½Æ´ï¿½ ï¿½ï¿½ï¿½
 					if (path[i - 1][j] == path[i][j - 1]) result[i - 1][j] = 1;
 					else {
 						if (path[i][j] - grid[i][j] == path[i - 1][j]) result[i - 1][j] = 1;
@@ -77,7 +76,7 @@ int main() {
 	freopen("gridpath.out", "w", stdout);
 	int row, col;
 	cin >> row >> col;
-	vector<vector<int>>grid(row,vector<int>(col,0)); vector<int> grid1;	grid.push_back(grid1); //°æ·Î°¡ ÀÖ´ÂÁö ¾ø´ÂÁö Ã¼Å©
+	vector<vector<int>>grid(row,vector<int>(col,0)); vector<int> grid1;	grid.push_back(grid1); //ï¿½ï¿½Î°ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¼Å©
 	for (int i = 0; i < row; i++) {
 		for (int j = 0; j < col; j++)
 			cin >> grid[i][j];
