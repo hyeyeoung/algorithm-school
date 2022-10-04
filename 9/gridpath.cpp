@@ -27,11 +27,11 @@ void check_path(int row, int col, vector<vector<int>> &grid) { //-1�� ä��
 	}
 }
 void find_min(int row, int col, vector<vector<int>>& grid,vector<vector<int>>& path) { //�ּҰ�ã�� �Լ�
-	path[0][0] = grid[0][0]; //���� ù ���� ���� ���� 0,0
-	for (int i = 1; i < row; i++) { //j=0�� ��,
+	path[0][0] = grid[0][0];
+	for (int i = 1; i < row; i++) { 
 		if (grid[i][0] != -1)  path[i][0] = grid[i][0] + path[i - 1][0];
 	}
-	for (int i = 1; i < col; i++) { //i =0�϶�
+	for (int i = 1; i < col; i++) { 
 		if (grid[0][i] != -1)  path[0][i] = grid[0][i] + path[0][i-1];
 	}
 	for (int i = 1; i < row; i++) {
