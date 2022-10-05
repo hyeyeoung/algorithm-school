@@ -36,7 +36,7 @@ int number() {
             return s - i;
         }
     }
-    return -1;
+    return -1; //승리할 수 없는 경우
 }
 
 int main() {

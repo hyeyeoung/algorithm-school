@@ -52,26 +52,28 @@ else:
 
     w.write(str(dp[-1][-1])+"\n")
 
-pp[n-1][m-1] = 1
+    pp[n-1][m-1] = 1
 
-for i in range(n-1,0,-1):    
-    for j in range(m-1,0,-1):
-        if pp[i][j] == 1:
-            if i ==0& j ==0:
-                pp[i][j] = 1
-            elif i == 0 & j != 0:
-                pp[i][j-1] = 1
-            elif i != 0 & j ==0:
-                pp[i-1][j] = 1
-            else:
-                if dp[i-1][j] == dp[i][j-1]:
+    for i in range(n-1,0,-1):    
+        for j in range(m-1,0,-1):
+            if pp[i][j] == 1:
+                if i ==0 & j ==0:
+                    pp[i][j] = 1
+                elif i == 0 & j != 0:
+                    pp[i][j-1] = 1
+                elif i != 0 & j ==0:
                     pp[i-1][j] = 1
-                elif dp[i][j]-grid[i][j] == dp[i-1][j]:
-                    pp[i-1][j] = 1
-                elif dp[i][j] - grid[i][j] == dp[i][j-1]:
-                    pp[i][j-1] =1 
-    for i in range(n):
-        for j in range(m):
+                else:
+                    if dp[i-1][j] == dp[i][j-1]:
+                        pp[i-1][j] = 1
+                    else:
+                        if dp[i][j]-grid[i][j] == dp[i-1][j]:
+                            pp[i-1][j] = 1
+                        elif dp[i][j] - grid[i][j] == dp[i][j-1]:
+                            pp[i][j-1] =1 
+    
+    for i in range(0,n,1):
+        for j in range(0,m,1):
             if pp[i][j] == 1:
                 w.write("("+str(i)+" "+str(j)+")\n")
-
+print(pp,sep="\n")
