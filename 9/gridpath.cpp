@@ -5,7 +5,8 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
-void check_path(int row, int col, vector<vector<int>> &grid) { //-1�� ä��� 
+
+void check_path(int row, int col, vector<vector<int>> &grid) {  
 	for (int i = 0; i < row; i++) {
 		if (grid[i][0] == -1) {
 			for (int j = i; j < row; j++)
