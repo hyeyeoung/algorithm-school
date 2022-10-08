@@ -9,7 +9,7 @@ int main() {
 	fin >> t;
 
 	for (int i = 0; i < t; i++) {
-		int m, f, n; //m = °Ç¹° Ãþ, f=°ÅÁÖ Ãþ, n=¿À¸¦ °è´Ü °¹¼ö
+		int m, f, n; 
 		fin >> m >> f >> n;
 		if (n % (m - 1) != 0) {
 			fout << n / (m - 1) + 1 << endl;
