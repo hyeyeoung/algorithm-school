@@ -15,8 +15,8 @@ int Max_4(int a, int b, int c, int d) { //매개변수 4개의 값 비교
 }
 void find_max(vector<int>& arr, vector<int>& max_, int n) {
 	max_[1] = arr[1];
-	max_[2] = max(arr[1],arr[2]);
-	max_[3] = Max(arr[1],arr[2],arr[3]);
+	max_[2] = arr[2];
+	max_[3] = arr[3];
 	max_[4] = max(arr[4] + max_[2], arr[4] + max_[1]);
 	if (n >= 5) {
 		for (int i = 5; i <= n; i++) {
