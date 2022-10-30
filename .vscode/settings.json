@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "fstream": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "utility": "cpp"
     }
 }
