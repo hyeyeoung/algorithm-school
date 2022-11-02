@@ -16,7 +16,6 @@ int partition(int np, int kp) {
 int main() {
     freopen("addingways.inp", "r", stdin);
     freopen("addingways.out","w",stdout);
-    
     while (true) {
         cin >> n >> k;
         if (n == 0 && k == 0) break;

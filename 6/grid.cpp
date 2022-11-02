@@ -1,10 +1,8 @@
 #include <fstream>
 using namespace std;
 int main() {
-	
 	ifstream fin("grid.inp");
 	ofstream fout("grid.out");
-	
 	int test_case;
 	fin >> test_case;
 	for (int i = 0; i < test_case; i++) {
@@ -13,9 +11,8 @@ int main() {
 		int* arr = new int[k];
 		int* tmp = new int[k];
 		int total = 0;
-		
 		for (int j = 0; j < k; j++) {
-			fin >> arr[j]; //arr = ¹°°¨ÀÇ ¾ç
+			fin >> arr[j]; //arr = ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 			total += arr[j];
 		}
 		int count = 0;
