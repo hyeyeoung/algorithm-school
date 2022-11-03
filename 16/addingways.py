@@ -13,7 +13,7 @@ def P(n, m):
     l = len(result)
     w.write(str(l)+'\n')
 
-f=open("addingways.inp","r")
+f=open("1.inp","r")
 w=open("addingways.out","w")
 data=f.read().rstrip().split()
 data=list(map(int,data))
