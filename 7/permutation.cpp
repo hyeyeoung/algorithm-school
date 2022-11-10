@@ -11,11 +11,11 @@ int main() {
 	for (int i = 0; i < test_case; i++) {
 		int size;
 		fin >> size;
-		int index = 0; //인덱스 정보 저장하기
+		int index = 0;
 		int* arr = new int[size];	
 		int* arr_bf = new int[size];
 		for (int j = 0; j < size; j++) {
-			fin >> arr[j]; //arr는 이진트리에 대한 중위 순회 결과(== 순열에 대한 정보)]
+			fin >> arr[j]; 
 			arr_bf[j] = 0;
 		}
 			

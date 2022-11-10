@@ -25,10 +25,10 @@ int main() {
 		for (int j = 0; j < tmp; j++) {
 			for (int k = 0; k < n; k++) {
 				for (int c = 0; c < n; c++) {
-					tmp_arr[k][c] = arr[n - c - 1][k]; //µ¹¸®±â
+					tmp_arr[k][c] = arr[n - c - 1][k]; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				}
 			}
-			for (int p = 0; p < n; p++) { //n¹ø ¹Ýº¹(¿­)
+			for (int p = 0; p < n; p++) {
 				int check = 0;
 				int index = n - 1;
 				while (true) {
