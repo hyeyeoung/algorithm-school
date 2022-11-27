@@ -2,25 +2,26 @@
 #include <algorithm>
 #include <cstring>
 using namespace std;
-struct job{
-    int time;
+struct free
+{
     int gain;
-    bool check = false;
+    int time;
 };
-job arr[1000];
-int check[1000];
+
 int n, I;
-int free(int index, int sum){
-    if(sum >= I || index == n) return sum;
-    for(int i = index + 1;i<=n;i++) free(i, sum+arr[i].gain);
+int grid[1001][1001];
+struct free job[1001];
+
+void freelancer(){ //i번째 인덱스, j번째 인덱스
+    memset(grid,0,sizeof(grid));
+
 }
 
 int main(){
     freopen("freelancer.inp","r",stdin);
-    // freopen("freelancer.out","w",stdout);
+    // freopen("freelancer.out","w",stdout);W
+    
     cin>>n>>I;
-    // 수입의 총합이 i를 넘으면서 최소 시간
-    for(int i = 0;i<n;i++) cin>>arr[i].gain >>arr[i].time;
-    cout<<free(0,0);
-    memset(arr,0,sizeof(arr));
+    for(int i = 0;i<n;i++) cin>>job[i].gain >> job[i].time;
+    
 }
