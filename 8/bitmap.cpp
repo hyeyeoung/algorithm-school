@@ -10,8 +10,8 @@ using namespace std;
 vector <vector<char>> arr;
 string result_B;
 
-void B( int row_start, int row_end, int col_start, int col_end) { //B¿¡¼­ D ºÐÇÒ ÇÑ ¹ø ÇÒ ¶§ ¸¶´Ù, DÃâ·Â ÀÌÈÄ ºÐÇÒ ÁøÇà
-   //¸Å°³º¯¼ö, ¹è¿­, ¼¼·ÎÁÙ ½ÃÀÛ Á¡, ³¡ Á¡, °¡·ÎÁÙ ½ÃÀÛ Á¡, ³¡ Á¡
+void B( int row_start, int row_end, int col_start, int col_end) { //Bï¿½ï¿½ï¿½ï¿½ D ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, Dï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+   //ï¿½Å°ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½è¿­, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½, ï¿½ï¿½ ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½, ï¿½ï¿½ ï¿½ï¿½
 	if (row_start == row_end || col_start == col_end)
 		return;
 
@@ -24,16 +24,16 @@ void B( int row_start, int row_end, int col_start, int col_end) { //B¿¡¼­ D ºÐÇÒ
 		}
 	}
 
-	if (count_one == (row_end - row_start) * (col_end - col_start)) { //Ä«¿îÆ®ÇÑ °¹¼ö°¡ Ä­ÀÇ °¹¼ö¿Í µ¿ÀÏÇÏ¸é cout 1
+	if (count_one == (row_end - row_start) * (col_end - col_start)) { //Ä«ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ cout 1
 		cout << "1";
 	}
-	else if (count_one == 0) { //Ä«¿îÆ®ÇÑ °¹¼ö°¡ 0°³¸é 0Ãâ·Â
+	else if (count_one == 0) { //Ä«ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ 0ï¿½ï¿½ï¿½
 		cout << "0";
 	}
 	else {
 		printf("D");
 		int new_rend, new_cend;
-		if (row_end % 2 == 0)//Â¦¼ö
+		if (row_end % 2 == 0)//Â¦ï¿½ï¿½
 			new_rend = row_end / 2;
 		else
 			new_rend = (row_end / 2) + 1;
@@ -44,7 +44,7 @@ void B( int row_start, int row_end, int col_start, int col_end) { //B¿¡¼­ D ºÐÇÒ
 			new_cend = (col_end / 2) + 1;
 
 		//cout << new_rend << " " << new_cend;
-		B(row_start, new_rend, col_start, new_cend); //1¹ø
+		B(row_start, new_rend, col_start, new_cend); //1ï¿½ï¿½
 		B(new_rend, row_end, col_start, new_cend); //2
 		B(new_rend, row_end, new_cend, col_end); //4
 		B(row_start, new_rend, new_cend, col_end); //3 
